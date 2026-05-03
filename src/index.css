@@ -204,7 +204,7 @@ button {
 }
 
 .content-card__title--dev {
-  margin-bottom: 32px;
+  margin-bottom: 40px;
   max-width: 36rem;
   font-family: var(--font-mono);
   font-size: 1.5rem;
