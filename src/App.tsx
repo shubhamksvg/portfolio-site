@@ -29,21 +29,25 @@ const projects = [
     title: "Loci.",
     desc: "Widgets were designed for phone screens. I redesigned them for 3D space.",
     video: "/locihero.mp4",
+    placeholder: false,
   },
   {
     title: "Monet.",
     desc: "An AI canvas where prompts become brushes and iteration feels tactile.",
     video: "/monethero.mp4",
+    placeholder: false,
   },
   {
     title: "Atlas.",
     desc: "A spatial knowledge graph that maps how ideas connect across disciplines.",
     video: null,
+    placeholder: true,
   },
   {
     title: "Echo.",
     desc: "Conversational interfaces that listen for intent, not just keywords.",
     video: null,
+    placeholder: true,
   },
 ];
 
@@ -213,7 +217,12 @@ export default function App() {
                 )}
               </motion.div>
               <div className="project-info">
-                <h2>{project.title}</h2>
+                <h2>
+                  {project.title}
+                  {project.placeholder && (
+                    <span className="coming-soon-badge">coming soon</span>
+                  )}
+                </h2>
                 <p>{project.desc}</p>
               </div>
             </div>
