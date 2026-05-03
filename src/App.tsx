@@ -9,7 +9,7 @@ type Mode = "dev" | "design";
 const content: Record<Mode, { title: string; lines: string[] }> = {
   dev: {
     title:
-      "I build spatial interfaces, AI-powered creative tools, and interaction systems. writing code that thinks about the people who'll use it.",
+      "I build spatial interfaces, AI-powered creative tools, and interaction systems.",
     lines: [
       "Next.js / React / TypeScript",
       "Python / ML pipelines",
@@ -29,13 +29,13 @@ const base = import.meta.env.BASE_URL;
 const projects = [
   {
     title: "Loci.",
-    desc: "Widgets were designed for phone screens. I redesigned them for 3D space.",
+    desc: "A spatial widget system designed for vision OS",
     video: `${base}locihero.mp4`,
     url: `${base}loci/index.html`,
   },
   {
     title: "Monet.",
-    desc: "An AI canvas where prompts become brushes and iteration feels tactile.",
+    desc: "An AI image generation tool for precise creative control",
     video: `${base}monethero.mp4`,
     url: `${base}monet/index.html`,
   },
