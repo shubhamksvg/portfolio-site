@@ -24,16 +24,18 @@ const content: Record<Mode, { title: string; lines: string[] }> = {
   },
 };
 
+const base = import.meta.env.BASE_URL;
+
 const projects = [
   {
     title: "Loci.",
     desc: "Widgets were designed for phone screens. I redesigned them for 3D space.",
-    video: "/locihero.mp4",
+    video: `${base}locihero.mp4`,
   },
   {
     title: "Monet.",
     desc: "An AI canvas where prompts become brushes and iteration feels tactile.",
-    video: "/monethero.mp4",
+    video: `${base}monethero.mp4`,
   },
 ];
 
