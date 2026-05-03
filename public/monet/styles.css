@@ -37,7 +37,7 @@
   --f-2xl: 35px;
   --f-3xl: 56px;
   --f-4xl: 72px;
-  --f-hero: clamp(48px, 8vw, 96px);
+  --f-hero: clamp(2.5rem, 5vw, 4.5rem);
   --f-pullquote: clamp(24px, 3.5vw, 42px);
 
   /* Spacing */
@@ -172,13 +172,14 @@ a:hover {
 .pill {
   display: inline-flex;
   align-items: center;
-  padding: var(--s-4) var(--s-16);
-  font-size: var(--f-xs);
+  padding: var(--s-8) var(--s-16);
+  font-size: var(--f-sm);
   font-weight: 500;
   letter-spacing: 0.04em;
   border: 1px solid var(--c-border);
   color: var(--c-text-secondary);
   background: transparent;
+  border-radius: 100px;
 }
 
 /* ===== SECTION SPACING ===== */
@@ -294,12 +295,11 @@ a:hover {
 
 .hero-title {
   font-family: var(--f-display);
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: var(--f-hero);
   font-weight: 700;
   color: var(--c-white);
   letter-spacing: -0.025em;
   line-height: 1.15;
-  margin-bottom: var(--s-16);
   text-shadow: 0 2px 20px rgba(0,0,0,0.2);
 }
 
@@ -309,6 +309,7 @@ a:hover {
   font-weight: 400;
   color: rgba(255,255,255,0.8);
   text-shadow: 0 1px 10px rgba(0,0,0,0.15);
+  line-height: 1.2;
 }
 
 .hero .pills-group .pill {
