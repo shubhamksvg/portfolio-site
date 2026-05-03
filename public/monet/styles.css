@@ -51,9 +51,10 @@
   --s-80: 80px;
   --s-120: 120px;
 
-  /* Grid */
+  /* Grid — match Loci */
   --grid-gap: 24px;
-  --grid-margin: clamp(24px, 4vw, 48px);
+  --grid-margin: 32px;
+  --s-96: 96px;
 }
 
 *, *::before, *::after {
@@ -129,11 +130,10 @@ a:hover {
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: var(--grid-gap);
-  padding-left: var(--grid-margin);
-  padding-right: var(--grid-margin);
+  gap: 0 var(--grid-gap);
   max-width: 1440px;
   margin: 0 auto;
+  padding: 0 var(--grid-margin);
 }
 
 .col-1-12 { grid-column: 1 / -1; }
@@ -220,19 +220,19 @@ a:hover {
 .fade-up[data-delay="4"] { transition-delay: 0.4s; }
 
 /* ============================================================
-   SECTION 1: HERO
+   SECTION 1: HERO — Loci-matching structure
    ============================================================ */
 
-.hero {
-  position: relative;
+/* Fixed video background layer */
+.hero-env {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100vh;
-  min-height: 600px;
+  z-index: 0;
   overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  background: var(--c-text-primary);
+  background: #0a0a0a;
 }
 
 .hero-video {
@@ -244,24 +244,6 @@ a:hover {
   opacity: 0.85;
 }
 
-/* Fallback if no video yet */
-.hero-placeholder {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2a2520 50%, #1a1a1a 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-placeholder-text {
-  font-family: var(--f-mono);
-  font-size: var(--f-sm);
-  color: var(--c-text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
 .hero-scrim {
   position: absolute;
   inset: 0;
@@ -269,30 +251,64 @@ a:hover {
   pointer-events: none;
 }
 
+/* Hero text overlay — sits on top, flex-end to push text to bottom */
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: var(--s-96);
+  pointer-events: none;
+}
+
+.hero-overlay .hero-title {
+  color: #fff;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+}
+
+.hero-overlay .hero-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+  text-shadow: 0 1px 10px rgba(0,0,0,0.15);
+}
+
+/* Pills — transparent on dark hero, matching Loci */
+.hero-overlay .pills-group .pill {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.9);
+  border-radius: 100px;
+  pointer-events: auto;
+}
+
 .hero-content {
   position: relative;
   z-index: 2;
-  padding: 0 0 var(--s-96) 0;
   width: 100%;
+  pointer-events: none;
 }
 
 .hero-title {
   font-family: var(--f-display);
-  font-size: var(--f-hero);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
   font-weight: 700;
   color: var(--c-white);
-  letter-spacing: -0.03em;
-  line-height: 0.95;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
   margin-bottom: var(--s-16);
+  text-shadow: 0 2px 20px rgba(0,0,0,0.2);
 }
 
 .hero-subtitle {
   font-family: var(--f-body);
-  font-size: var(--f-lg);
+  font-size: 1.563rem;
   font-weight: 400;
-  color: rgba(255,255,255,0.7);
-  margin-bottom: var(--s-32);
-  max-width: 480px;
+  color: rgba(255,255,255,0.8);
+  text-shadow: 0 1px 10px rgba(0,0,0,0.15);
 }
 
 .hero .pills-group .pill {
@@ -324,6 +340,19 @@ a:hover {
 @keyframes scrollPulse {
   0%, 100% { opacity: 0.3; transform: scaleY(1); }
   50% { opacity: 1; transform: scaleY(1.2); }
+}
+
+/* ============================================================
+   GLASS LAYER — Main scrollable content (matches Loci)
+   ============================================================ */
+.glass-layer {
+  position: relative;
+  z-index: 2;
+  margin-top: 100vh;
+  background: var(--c-bg);
+  box-shadow: 0 -4px 40px rgba(0,0,0,0.08);
+  border-top-left-radius: 32px;
+  border-top-right-radius: 32px;
 }
 
 /* ============================================================

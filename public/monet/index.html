@@ -38,29 +38,33 @@
   </nav>
 
   <!-- ============================================================
-       SECTION 1: HERO — Full-viewport video
+       SECTION 1: HERO — Full-viewport video (matches Loci structure)
        ============================================================ -->
-  <section class="hero" id="hero-section">
+  <div class="hero-env" id="hero-env">
     <video class="hero-video" autoplay muted loop playsinline>
       <source src="assets/herofinalmaxbit.mp4" type="video/mp4">
     </video>
     <div class="hero-scrim"></div>
-    <div class="hero-content">
-      <div class="grid">
-        <div class="col-1-12">
-          <h1 class="hero-title">Monet.</h1>
-          <h2 class="hero-subtitle mb-32" style="text-align: left;">An AI image generation tool for precise creative control</h2>
-          <div class="pills-group" style="justify-content: flex-start;">
-            <span class="pill" style="backdrop-filter: none; background: transparent;">Individual Project</span>
-            <span class="pill" style="backdrop-filter: none; background: transparent;">'26</span>
-            <span class="pill" style="backdrop-filter: none; background: transparent;">AI Tools</span>
-            <span class="pill" style="backdrop-filter: none; background: transparent;">Interaction Design</span>
-            <span class="pill" style="backdrop-filter: none; background: transparent;">Next.js</span>
-          </div>
+  </div>
+
+  <section class="hero-overlay" id="hero-section">
+    <div class="grid">
+      <div class="col-1-12">
+        <h1 class="hero-title mb-16">Monet.</h1>
+        <h2 class="hero-subtitle mb-32">An AI image generation tool for precise creative control</h2>
+        <div class="pills-group">
+          <span class="pill">Individual Project</span>
+          <span class="pill">'26</span>
+          <span class="pill">AI Tools</span>
+          <span class="pill">Interaction Design</span>
+          <span class="pill">Next.js</span>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- All scrollable content sits on a raised layer above the fixed hero -->
+  <main class="glass-layer">
 
   <!-- ============================================================
        SECTION 2: THE PROBLEM — Asymmetric Split
@@ -333,6 +337,8 @@
       </div>
     </div>
   </footer>
+
+  </main>
 
   <script src="main.js"></script>
 </body>
