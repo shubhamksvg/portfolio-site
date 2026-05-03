@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monet — More Than a Prompt. Less Than Code.</title>
+  <meta name="description" content="Monet is an AI prompt companion that gives creators non-destructive control over image generation. Lock what works, change what matters.">
+
+  <!-- OG / Social -->
+  <meta property="og:title" content="Monet — More Than a Prompt. Less Than Code.">
+  <meta property="og:description" content="An AI prompt companion for controlled creative iteration. A project by a design technologist.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- Spatial Nav — matching Loci glass pill bar -->
+  <nav class="spatial-nav" id="spatial-nav" aria-label="Section navigation">
+    <div class="spatial-nav-track">
+      <a href="#hero-section" class="spatial-nav-item active" data-section="hero-section">Monet</a>
+      <a href="#section-problem" class="spatial-nav-item" data-section="section-problem">Problem</a>
+      <a href="#section-research" class="spatial-nav-item" data-section="section-research">Research</a>
+      <a href="#section-concept" class="spatial-nav-item" data-section="section-concept">System</a>
+      <a href="#section-anatomy" class="spatial-nav-item" data-section="section-anatomy">Interaction</a>
+      <a href="#section-export" class="spatial-nav-item" data-section="section-export">Export</a>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       SECTION 1: HERO — Full-viewport video
+       ============================================================ -->
+  <section class="hero" id="hero-section">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="assets/herofinalmaxbit.mp4" type="video/mp4">
+    </video>
+    <div class="hero-scrim"></div>
+    <div class="hero-content" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+      <h1 class="hero-title">Monet.</h1>
+      <p class="hero-subtitle" style="text-align: center;">More than a prompt. Less than code.</p>
+      <div class="pills-group">
+        <span class="pill">Individual Project</span>
+        <span class="pill">'26</span>
+        <span class="pill">AI Tools</span>
+        <span class="pill">Interaction Design</span>
+        <span class="pill">Next.js</span>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <div class="scroll-hint-line"></div>
+      Scroll
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 2: THE PROBLEM — Asymmetric Split
+       ============================================================ -->
+  <section class="py-120 problem-section" id="section-problem">
+    <div class="grid">
+      <div class="col-2-5 fade-up">
+        <div class="problem-text">
+          <p class="label mb-16">The Problem</p>
+          <h2>AI image tools let you generate anything. But they won't let you change just one thing.</h2>
+          <p>
+            Getting a first image is fast. Getting the <em>right</em> variant takes 
+            10–40× longer because every change is a full re-roll. Edit the lighting? 
+            Lose the face. Swap the outfit? The background shifts. There's no concept 
+            of "lock what works."
+          </p>
+          <p>
+            There is a gap between writing raw Python scripts and typing a single text prompt. 
+            Monet lives in that in-between space, translating the logic and control of code 
+            into an intuitive, visual system that artists can understand and manipulate 
+            without technical complexity.
+          </p>
+        </div>
+      </div>
+      <div class="col-7-12 fade-up" data-delay="1">
+        <div class="problem-visual">
+          <img src="assets/monet-screenshot.png" alt="Monet Project — Editorial Asymmetric Design System" style="width: 100%; border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.12);">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================================
+       SECTION 3: RESEARCH — Full-viewport Pull Quotes
+       ============================================================ -->
+  <section class="py-120 research-section" id="section-research">
+    <div class="grid mb-80">
+      <div class="col-3-10 fade-up">
+        <div class="research-intro" style="text-align: center;">
+          <p class="label mb-16">Starting Point</p>
+          <h2>I watched creators fight their prompts.</h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quote 1: Alex -->
+    <div class="grid">
+      <div class="col-2-11">
+        <div class="quote-block fade-up">
+          <p class="quote-text-large">
+            "i changed 'red shirt' to 'blue shirt' and it completely threw out 
+            the background composition i spent an hour trying to get. what's the 
+            point of locking the seed if the ai is just gonna ignore the whole 
+            layout over one word?"
+          </p>
+          <p class="quote-attribution">— Alex, 26 · 3D Artist &amp; Concept Designer</p>
+          <div class="quote-insight">
+            <h4>Insight</h4>
+            <p>Seed locking — the go-to fix for consistency — only preserves the noise pattern, not the composition. What users actually want is semantic control: the ability to change one element (a shirt color) without the AI reinterpreting the entire scene around it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quote 2: Sarah -->
+    <div class="grid">
+      <div class="col-2-11">
+        <div class="quote-block fade-up">
+          <p class="quote-text-large">
+            "does anyone actually know how cfg scale works or are we all just 
+            faking it? i literally just smash random numbers between 5 and 15 
+            until the image stops looking deep-fried."
+          </p>
+          <p class="quote-attribution">— Sarah, 23 · Content Creator</p>
+          <div class="quote-insight">
+            <h4>Insight</h4>
+            <p>Parameters like CFG Scale and Step Count control meaningful things — how literally the AI follows your prompt, how refined the output is — but they're exposed as raw numbers with no context. The interface should translate them into language creators already think in, like "Creative vs. Literal."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quote 3: Dan -->
+    <div class="grid">
+      <div class="col-2-11">
+        <div class="quote-block fade-up">
+          <p class="quote-text-large">
+            "getting this npc to look exactly the same in daylight versus a 
+            dark cave is a joke. i mask out everything to just change the 
+            lighting, and the inpainting still decides to give him a 
+            completely different nose."
+          </p>
+          <p class="quote-attribution">— Dan, 29 · Indie Game Developer</p>
+          <div class="quote-insight">
+            <h4>Insight</h4>
+            <p>Inpainting — masking out part of an image to regenerate it — often breaks the subject when the change involves lighting or environment. A better approach is to regenerate the full scene from the prompt while locking the character's identity, so the subject stays consistent across conditions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bridge -->
+    <div class="bridge fade-up">
+      <div class="grid">
+        <div class="col-3-10" style="text-align: center;">
+          <h3>What if the tool understood what you meant to change, and protected everything else?</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================================
+       SECTION 4: THE CONCEPT — Dark, Horizontal Flow
+       ============================================================ -->
+  <section class="py-120 concept-section" id="section-concept">
+    <div class="grid mb-64">
+      <div class="col-3-10 fade-up" style="text-align: center;">
+        <p class="label mb-16">The System</p>
+        <h2 class="mb-24">Four steps. One non-destructive loop.</h2>
+        <p>Monet doesn't replace your creative tools. It sits between your intent and the machine, 
+        translating what you <em>mean</em> into parameters the AI can respect.</p>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="col-1-12 fade-up">
+        <div class="concept-flow">
+          <div class="concept-step">
+            <span class="concept-step-number">01</span>
+            <h4>Analyze</h4>
+            <p>Type a natural language prompt. Monet's AI reads it and dynamically extracts 
+            semantic parameter categories like subject, lighting, camera, and style, each with 
+            contextual controls.</p>
+          </div>
+          <div class="concept-step">
+            <span class="concept-step-number">02</span>
+            <h4>Lock</h4>
+            <p>Choose what to protect. Locking "Subject" means the face, pose, and identity 
+            are preserved no matter what else changes. Your intent, enforced.</p>
+          </div>
+          <div class="concept-step">
+            <span class="concept-step-number">03</span>
+            <h4>Edit</h4>
+            <p>Adjust only the unlocked parameters using semantic sliders. 
+            "Warm ↔ Cool" instead of "CFG 7.5." 
+            "Soft ↔ Hard" instead of a raw shadows value.</p>
+          </div>
+          <div class="concept-step">
+            <span class="concept-step-number">04</span>
+            <h4>Generate</h4>
+            <p>The output respects your locks. Change the lighting without losing the face. 
+            Swap the style without the composition collapsing. Iterate with confidence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 5: INTERACTION ANATOMY — Video Dominant
+       ============================================================ -->
+  <section class="anatomy-section" id="section-anatomy">
+    <!-- Background video: intent cascade loop -->
+    <video class="anatomy-video-bg" autoplay muted loop playsinline>
+      <source src="assets/intentlock.mp4" type="video/mp4">
+    </video>
+
+    <div class="grid anatomy-content">
+      <div class="col-2-5 fade-up">
+        <div class="anatomy-panel">
+          <p class="label mb-16">Key Interaction</p>
+          <h3>The Intent Cascade</h3>
+          <p>
+            When you select "Lighting" as your change intent, Monet doesn't just 
+            unlock the lighting sliders. It automatically <strong>locks</strong> everything 
+            else, Subject, Pose, Camera, Style, in a single cascade.
+          </p>
+          <p>
+            This is the novel interaction pattern. Instead of manually toggling 
+            five locks, you declare your intent once and the system infers 
+            the protection boundaries.
+          </p>
+          <div class="anatomy-callout">
+            <p>↕ "Warm ↔ Cool" replaces raw CFG 7.5.<br>
+            The slider label <em>is</em> the documentation.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-7-12 fade-up" data-delay="1">
+        <video autoplay muted loop playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.12);">
+          <source src="assets/intentlock.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- ============================================================
+       SECTION 6: POLYGLOT EXPORT — Mirrored Asymmetric
+       ============================================================ -->
+  <section class="py-120 export-section" id="section-export">
+    <div class="grid">
+      <div class="col-1-6 fade-up">
+        <div class="export-video-col">
+          <video autoplay muted loop playsinline style="width: 100%; border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.12);">
+            <source src="assets/poly169.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="col-8-12 fade-up" data-delay="1">
+        <div class="export-text">
+          <p class="label mb-16">Universal Export</p>
+          <h2>Your creative intent shouldn't be locked to one rendering engine.</h2>
+          <p>
+            Monet's Polyglot Export translates your locked prompt structure into 
+            native syntax for three major platforms so you can move freely 
+            between tools without re-engineering your parameters.
+          </p>
+          <div class="format-badges">
+            <span class="format-badge active">JSON</span>
+            <span class="format-badge">Midjourney</span>
+            <span class="format-badge">Stable Diffusion</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       SECTION 8: FOOTER
+       ============================================================ -->
+  <footer class="site-footer py-80" id="section-footer">
+    <div class="grid">
+      <div class="col-2-5 fade-up">
+        <h3 class="footer-title mb-16">Monet.</h3>
+        <div class="footer-links mb-24">
+          <a href="mailto:shubhamk@usc.edu" class="footer-link">shubhamk@usc.edu</a>
+          <span class="footer-divider-dot">·</span>
+          <a href="#" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="../" class="footer-link">Full Portfolio</a>
+        </div>
+        <p class="caption">© 2026</p>
+      </div>
+      <div class="col-7-11 fade-up" data-delay="1">
+        <p class="label mb-16">Deliverables</p>
+        <p class="mb-32">
+          Live Tool · Polyglot Export System · Qualitative Research · 
+          Prompt Quality Analyzer · Dynamic Parameter Extraction
+        </p>
+        <p class="label mb-16">Built With</p>
+        <div class="pills-group" style="margin-bottom: var(--s-48);">
+          <span class="pill">Next.js</span>
+          <span class="pill">TypeScript</span>
+          <span class="pill">Gemini 2.5 Flash</span>
+          <span class="pill">Framer Motion</span>
+        </div>
+        <p class="label mb-16">Navigation</p>
+          <a href="../loci/" class="footer-link">← Previous: Loci</a>
+        </div>
+      </div>
+    </div>
+    <div class="grid" style="margin-top: var(--s-48);">
+      <div class="col-3-10" style="text-align: center;">
+        <a href="#hero-section" class="back-to-top">↑ Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

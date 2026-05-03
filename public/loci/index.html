@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loci — Reimagining Widgets for Spatial Computing</title>
+  <meta name="description" content="Loci anchors visionOS widgets to physical surfaces in your home, turning spatial computing into something that actually fits your environment.">
+
+  <!-- OG / Social -->
+  <meta property="og:title" content="Loci — Reimagining Widgets for Spatial Computing">
+  <meta property="og:description" content="A spatial computing case study exploring how visionOS widgets can anchor to the surfaces that give them meaning.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/weather.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Scroll progress indicator -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- Section navigation dots -->
+  <!-- Spatial Nav — visionOS-style floating glass ornament -->
+  <nav class="spatial-nav" id="spatial-nav" aria-label="Section navigation">
+    <div class="spatial-nav-track">
+      <a href="#hero-section" class="spatial-nav-item active" data-section="hero-section">Loci</a>
+      <a href="#section-question" class="spatial-nav-item" data-section="section-question">Question</a>
+      <a href="#section-research" class="spatial-nav-item" data-section="section-research">Research</a>
+      <a href="#section-concept" class="spatial-nav-item" data-section="section-concept">Concept</a>
+      <a href="#section-widgets" class="spatial-nav-item" data-section="section-widgets">Widgets</a>
+      <a href="#section-lifecycle" class="spatial-nav-item" data-section="section-lifecycle">States</a>
+      <a href="#section-process" class="spatial-nav-item" data-section="section-process">Process</a>
+      <a href="#section-day" class="spatial-nav-item" data-section="section-day">Scenario</a>
+      <a href="#section-prototype" class="spatial-nav-item" data-section="section-prototype">Prototype</a>
+    </div>
+  </nav>
+
+  <!-- ====================================================
+       LAYER 0: ENVIRONMENT (Fixed hero background)
+       ==================================================== -->
+  <div class="environment-layer" id="environment-layer">
+    <video src="assets/herofinal2.mp4" poster="assets/focus.webp" autoplay muted loop playsinline class="environment-media" id="hero-media"></video>
+  </div>
+
+  <!-- ====================================================
+       HERO OVERLAY (scrolls with user, sits on top of env)
+       ==================================================== -->
+  <section class="hero-overlay" id="hero-section">
+    <div class="grid">
+      <div class="col-1-12">
+        <h1 class="mb-16">Loci.</h1>
+        <h2 class="mb-32">Widgets were designed for phone screens, not for spatial 3D environments.</h2>
+        <div class="pills-group">
+          <span class="pill">Individual Project</span>
+          <span class="pill">'26</span>
+          <span class="pill">UX & Spatial Design</span>
+          <span class="pill">visionOS</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <div class="scroll-hint-line"></div>
+      Scroll
+    </div>
+  </section>
+
+  <!-- ====================================================
+       GLASS LAYER — All scrollable content
+       ==================================================== -->
+  <main class="glass-layer" id="glass-layer">
+
+    <!-- ////////////////////////////////////////////////////////////
+         SECTION A — THE QUESTION
+         //////////////////////////////////////////////////////////// -->
+    <section class="py-80" id="section-question" data-ambient="default">
+      <div class="grid">
+        <div class="col-1-6 fade-up">
+          <p class="label mb-16">The Observation</p>
+          <h2>Widgets were designed for phones. They were never rethought for virtual spaces.</h2>
+        </div>
+        <div class="col-7-12 fade-up" data-delay="1">
+          <p class="mb-24">
+            On your phone, widgets sit on a flat homescreen — a grid of glanceable tiles. But what happens when that homescreen becomes an entire room? This project explores what widgets could become when they're freed from the screen and bound to the space around you.
+          </p>
+          <p>
+            Humans naturally organize physical space by purpose. Keys go by the door. Recipes stay in the kitchen. We already associate specific surfaces with specific tasks — we just never applied that logic to digital interfaces.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ////////////////////////////////////////////////////////////
+         SECTION A2 — RESEARCH
+         //////////////////////////////////////////////////////////// -->
+    <section class="py-80" id="section-research" data-ambient="default">
+      <div class="grid mb-48">
+        <div class="col-3-10 text-center fade-up">
+          <p class="label mb-16">Starting Point</p>
+          <h2 class="mb-24">Before designing for space, I studied the screen.</h2>
+          <p>
+            I asked a handful of peers to screenshot their iPhone home screens and walk me through 
+            how they organized their widgets — what they check first, what they ignore, 
+            and exactly why things ended up where they did.
+          </p>
+        </div>
+      </div>
+
+      <!-- iPhone Screenshots Grid -->
+      <div class="grid mb-48">
+        <div class="col-1-12">
+          <div class="research-screenshots-grid fade-up">
+            <div class="research-iphone-wrapper">
+              <div class="iphone-frame">
+                <img src="assets/research_screen_1.png" alt="iPhone home screen showing cluttered first page with multiple widgets and apps">
+              </div>
+              <span class="iphone-label">Page 1 of 5</span>
+            </div>
+            <div class="research-iphone-wrapper">
+              <div class="iphone-frame">
+                <img src="assets/research_screen_2.png" alt="iPhone home screen showing meticulously organized folders and widgets">
+              </div>
+              <span class="iphone-label">Highly Organized</span>
+            </div>
+            <div class="research-iphone-wrapper">
+              <div class="iphone-frame">
+                <img src="assets/research_screen_3.png" alt="iPhone home screen with almost all widgets removed, mostly blank">
+              </div>
+              <span class="iphone-label">Widgets Removed</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quotes & Insights -->
+      <div class="grid">
+        <div class="col-1-12">
+          <div class="research-insights-grid fade-up">
+            
+            <!-- Insight 1 -->
+            <div class="insight-column">
+              <div class="quote-card glass-panel-interactive">
+                <span class="insight-number">01</span>
+                <p class="insight-heading">People already organize by context</p>
+                <blockquote class="quote-text">"I put weather and calendar on my first page because those are the only two things I absolutely need before I walk out the door. Everything else is buried."</blockquote>
+                <div class="quote-author">S., 24</div>
+              </div>
+            </div>
+
+             <!-- Insight 2 -->
+             <div class="insight-column">
+              <div class="quote-card glass-panel-interactive">
+                <span class="insight-number">02</span>
+                <p class="insight-heading">Widgets fail without a trigger</p>
+                <blockquote class="quote-text">"I took all my widgets off my home screen. They just ended up blending into the background, and I realized I wasn't even looking at them anymore."</blockquote>
+                <div class="quote-author">R., 27</div>
+              </div>
+            </div>
+
+             <!-- Insight 3 -->
+             <div class="insight-column">
+              <div class="quote-card glass-panel-interactive">
+                <span class="insight-number">03</span>
+                <p class="insight-heading">Physical space holds information</p>
+                <blockquote class="quote-text">"I still keep a physical sticky note by the door to remember my keys. Digital reminders just get completely lost in the noise of a hundred other notifications."</blockquote>
+                <div class="quote-author">M., 22</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Bridge -->
+      <div class="grid mt-64 mb-32">
+        <div class="col-3-10 text-center fade-up">
+          <h3 class="bridge-text">What if widgets could live where their information already belongs?</h3>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ////////////////////////////////////////////////////////////
+         SECTION B — THE CONCEPT (Floor Plan)
+         //////////////////////////////////////////////////////////// -->
+    <section class="py-80" id="section-concept" data-ambient="default">
+      <div class="grid mb-48">
+        <div class="col-3-10 text-center fade-up">
+          <p class="label mb-16">The Concept</p>
+          <h2 class="mb-24">Your home already knows where information lives.</h2>
+          <p>
+            You check the weather by looking out the window. You review your form 
+            in the bathroom mirror. You read recipes on the kitchen counter. 
+            Loci maps everyday widgets to the surfaces that give them meaning.
+          </p>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="col-1-12 fade-up scale-in">
+          <div class="floorplan-container" id="floorplan">
+            <img src="assets/floor_plan_isometric_FINAL.jpg" 
+                 alt="Isometric floor plan showing Loci anchor points: Weather at Window, Kitchen at Counter, Fitness at Mirror, Medication at Shelf, Focus at Desk">
+          </div>
+        </div>
+      </div>
+      <div class="grid mt-32">
+        <div class="col-3-10 text-center fade-up">
+          <p class="caption">
+            Each widget anchored to the place 
+            where its information is most useful.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ////////////////////////////////////////////////////////////
+         SECTION B2 — DESIGN PRINCIPLES
+         //////////////////////////////////////////////////////////// -->
+    <section class="py-80" id="section-principles" data-ambient="default">
+      <div class="grid mb-48">
+        <div class="col-3-10 text-center fade-up">
+          <p class="label mb-16">Design Framework</p>
+          <h2 class="mb-24">Four principles. One spatial language.</h2>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="col-1-12">
+          <div class="principles-grid">
+            <div class="principle-card fade-up" data-delay="1">
+              <span class="principle-number">01</span>
+              <h4>Surface Semantics</h4>
+              <p>The physical surface defines the widget's purpose. A window means weather. A counter means cooking. The mapping is intuitive because it already exists in your behavior.</p>
+            </div>
+            <div class="principle-card fade-up" data-delay="2">
+              <span class="principle-number">02</span>
+              <h4>Ambient-First</h4>
+              <p>Widgets are invisible until relevant. No home screens, no app grids, no manual placement. Information surfaces only when context demands it.</p>
+            </div>
+            <div class="principle-card fade-up" data-delay="3">
+              <span class="principle-number">03</span>
+              <h4>Proximity Intelligence</h4>
+              <p>Your distance to a surface determines interaction depth. Far away: nothing. Walking past: a glance of data. Standing in front: full interaction panel.</p>
+            </div>
+            <div class="principle-card fade-up" data-delay="4">
+              <span class="principle-number">04</span>
+              <h4>Zero Configuration</h4>
+              <p>You never drag a widget onto a wall. Loci observes your routines and learns which surfaces matter. Setup is living, not installing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ////////////////////////////////////////////////////////////
+         SECTION C — WIDGET SHOWCASE (Deep Dives)
+         //////////////////////////////////////////////////////////// -->
+    <section class="widget-showcase" id="section-widgets">
+
+      <!-- — Bento Widget Grid (Kitchen + Weather) — -->
+      <div class="widget-bento-section" data-ambient="default">
+
+        <!-- Row 1: Kitchen (text left, image right) -->
+        <div class="bento-row bento-row--text-left">
+          <div class="bento-text-card fade-up">
+            <div class="anchor-badge">
+              <svg class="anchor-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L12 22"/><path d="M17 7L12 2L7 7"/><circle cx="12" cy="18" r="4"/></svg>
+              Loci Anchor: Kitchen Counter
+            </div>
+            <h3>Kitchen</h3>
+            <p>
+              Recipes on the counter. Timers by the stove. 
+              The kitchen already has a layout for information. 
+              Loci just follows it.
+            </p>
+            <div class="bento-detail-callout">
+              <p>
+                This is the widget with the most spatial complexity. 
+                Two sub-anchors in one room: countertop for recipes and 
+                stovetop for timers. Each responds to proximity independently. 
+                Walk to the stove and only the timers surface.
+              </p>
+            </div>
+          </div>
+          <div class="bento-image-card fade-up" data-delay="1">
+            <img src="assets/kitchen.jpg" 
+                 alt="Kitchen widget anchored to kitchen counter showing recipe and cooking timers"
+                 loading="lazy">
+          </div>
+        </div>
+
+        <!-- Row 2: Weather (image left, text right) -->
+        <div class="bento-row bento-row--text-right">
+          <div class="bento-image-card fade-up">
+            <img src="assets/weather.png" 
+                 alt="Weather widget anchored to a window showing overcast conditions with rain forecast"
+                 loading="lazy">
+          </div>
+          <div class="bento-text-card fade-up" data-delay="1">
+            <div class="anchor-badge">
+              <svg class="anchor-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L12 22"/><path d="M17 7L12 2L7 7"/><circle cx="12" cy="18" r="4"/></svg>
+              Loci Anchor: Window
+            </div>
+            <h3>Weather</h3>
+            <p>
+              You already check the weather by glancing outside. 
+              Loci puts the forecast directly on the glass. 
+              The surface is the context.
+            </p>
+            <div class="bento-detail-callout">
+              <p>
+                In passive state, the widget is nearly invisible. A soft temperature 
+                glyph at the corner of the pane. When you look toward the window, 
+                a full forecast unfolds across the glass. Rain probability, 
+                hourly breakdown, UV index. You glance away and it fades.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- — Remaining Widgets: Compact 3-Up Grid — -->
+      <div class="widget-compact-row py-80" data-ambient="default">
+        <div class="grid mb-48">
+          <div class="col-3-10 text-center fade-up">
+            <p class="label mb-16">Three More Anchors</p>
+            <h2>The same principle, different surfaces.</h2>
+          </div>
+        </div>
+        <div class="grid grid-full">
+          <div class="col-1-12">
+            <div class="widget-thumbnail-grid">
+
+              <div class="widget-thumbnail fade-up" data-delay="1" data-ambient="fitness">
+                <div class="widget-thumb-image">
+                  <img src="assets/fitness.jpg" 
+                       alt="Fitness widget anchored to a mirror showing pose tracking overlay"
+                       loading="lazy">
+                </div>
+                <div class="widget-thumb-info">
+                  <div class="anchor-badge">
+                    <svg class="anchor-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L12 22"/><path d="M17 7L12 2L7 7"/><circle cx="12" cy="18" r="4"/></svg>
+                    Mirror
+                  </div>
+                  <h4>Fitness</h4>
+                  <p>Pose tracking overlaid on your reflection. The mirror already shows your body. Loci adds the coaching layer.</p>
+                </div>
+              </div>
+
+              <div class="widget-thumbnail fade-up" data-delay="2" data-ambient="medication">
+                <div class="widget-thumb-image">
+                  <img src="assets/medication.png" 
+                       alt="Medication widget anchored to bathroom shelf showing daily vitamin tracker"
+                       loading="lazy">
+                </div>
+                <div class="widget-thumb-info">
+                  <div class="anchor-badge">
+                    <svg class="anchor-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L12 22"/><path d="M17 7L12 2L7 7"/><circle cx="12" cy="18" r="4"/></svg>
+                    Shelf
+                  </div>
+                  <h4>Medication</h4>
+                  <p>Passive until you reach for the bottle. Then it confirms your streak and logs the dose. One tap, done.</p>
+                </div>
+              </div>
+
+              <div class="widget-thumbnail fade-up" data-delay="3" data-ambient="focus">
+                <div class="widget-thumb-image">
+                  <img src="assets/focus.png" 
+                       alt="Focus widget anchored to desk showing notification management and deep work mode"
+                       loading="lazy">
+                </div>
+                <div class="widget-thumb-info">
+                  <div class="anchor-badge">
+                    <svg class="anchor-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L12 22"/><path d="M17 7L12 2L7 7"/><circle cx="12" cy="18" r="4"/></svg>
+                    Desk
+                  </div>
+                  <h4>Focus</h4>
+                  <p>Notifications compress into a quiet amber dot at the edge of your vision. You decide when to look.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ////////////////////////////////////////////////////////////
+         SECTION D — WIDGET LIFECYCLE
+         //////////////////////////////////////////////////////////// -->
+    <section class="py-80" id="section-lifecycle" data-ambient="default">
+      <div class="grid mb-40">
+        <div class="col-3-10 text-center fade-up">
+          <p class="label mb-16">Behavior Specification</p>
+          <h2 class="mb-24">Four states. One continuous flow.</h2>
+          <p>
+            Every Loci widget follows the same lifecycle, from invisible 
+            to ambient. The transition comes from your gaze and proximity. 
+            Never a manual toggle.
+          </p>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="col-1-12 fade-up scale-in">
+          <div class="widget-image-frame">
+            <img src="assets/widget_state_flow_FINAL.jpg" 
+                 alt="Loci widget state flow: Passive, Glance, Interaction, Ambient"
+                 loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ////////////////////////////////////////////////////////////
+         SECTION D2 — DESIGN JOURNEY (Process Artifacts)
+         //////////////////////////////////////////////////////////// -->
+    <section class="pt-80" style="padding-bottom: var(--s-32);" id="section-process" data-ambient="default">
+      <div class="grid mb-24">
+        <div class="col-3-10 text-center fade-up">
+          <p class="label mb-16">Design Journey</p>
+          <h2 class="mb-24">From sketches to spatial specification.</h2>
+        </div>
+      </div>
+      <div class="film-strip fade-up">
+        <div class="film-strip-track">
+          <div class="film-strip-frame">
+            <img src="assets/process_ideation_sketch.png" 
+                 alt="Ideation sketch exploring semantic binding concepts"
+                 loading="lazy">
+          </div>
+          <div class="film-strip-frame">
+            <img src="assets/process_storyboard_kitchen.png" 
+                 alt="Kitchen recipe widget storyboard"
+                 loading="lazy">
+          </div>
+          <div class="film-strip-frame">
+            <img src="assets/process_ergonomics_whiteboard.png" 
+                 alt="Ergonomics whiteboard with FOV and comfort zones"
+                 loading="lazy">
+          </div>
+          <div class="film-strip-frame">
+            <img src="assets/process_ui_breakdown.png" 
+                 alt="Glass widget UI specification breakdown"
+                 loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+        <!-- ////////////////////////////////////////////////////////////
+         SECTION E — A DAY WITH LOCI (Storyboard)
+         //////////////////////////////////////////////////////////// -->
+    <section class="py-80 storyboard-section" id="section-day">
+      <div class="grid mb-48">
+        <div class="col-3-10 text-center fade-up">
+          <p class="label mb-16">Scenario</p>
+          <h2 class="mb-24">A day with Loci.</h2>
+          <p>
+            Here's what a normal day looks like when your home 
+            understands where information belongs.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="col-1-12">
+          <div class="storyboard-grid fade-up">
+            
+            <!-- Panel 1 -->
+            <div class="storyboard-panel">
+              <div class="storyboard-image-wrapper">
+                <img src="assets/storyboard/panel1.png" alt="Morning Routine" class="storyboard-image" loading="lazy">
+              </div>
+              <div class="storyboard-content">
+                <span class="storyboard-time">7:30 AM</span>
+                <h3 class="storyboard-title">Relative Anchor</h3>
+                <p class="storyboard-caption">Activity rings float perfectly in the air between you and the morning mirror.</p>
+              </div>
+            </div>
+
+            <!-- Panel 2 -->
+            <div class="storyboard-panel">
+              <div class="storyboard-image-wrapper">
+                <img src="assets/storyboard/panel2.png" alt="Packing for work" class="storyboard-image" loading="lazy">
+              </div>
+              <div class="storyboard-content">
+                <span class="storyboard-time">8:15 AM</span>
+                <h3 class="storyboard-title">Ecosystem Tracking</h3>
+                <p class="storyboard-caption">A battery status widget is permanently anchored above your physical AirPods case.</p>
+              </div>
+            </div>
+
+            <!-- Panel 3 -->
+            <div class="storyboard-panel">
+              <div class="storyboard-image-wrapper">
+                <img src="assets/storyboard/panel3.png" alt="Prepping lunch" class="storyboard-image" loading="lazy">
+              </div>
+              <div class="storyboard-content">
+                <span class="storyboard-time">12:30 PM</span>
+                <h3 class="storyboard-title">Plane Snap</h3>
+                <p class="storyboard-caption">Your grocery list is secured perfectly flat against the physical refrigerator door.</p>
+              </div>
+            </div>
+
+            <!-- Panel 4 -->
+            <div class="storyboard-panel">
+              <div class="storyboard-image-wrapper">
+                <img src="assets/storyboard/panel4.png" alt="Evening unwind" class="storyboard-image" loading="lazy">
+              </div>
+              <div class="storyboard-content">
+                <span class="storyboard-time">6:00 PM</span>
+                <h3 class="storyboard-title">Image Tracking</h3>
+                <p class="storyboard-caption">Looking at a physical vinyl record pulls up the digital Apple Music playback controls.</p>
+              </div>
+            </div>
+
+            <!-- Panel 5 -->
+            <div class="storyboard-panel">
+              <div class="storyboard-image-wrapper">
+                <img src="assets/storyboard/panel5.png" alt="Prime time" class="storyboard-image" loading="lazy">
+              </div>
+              <div class="storyboard-content">
+                <span class="storyboard-time">8:00 PM</span>
+                <h3 class="storyboard-title">Defined Boundary</h3>
+                <p class="storyboard-caption">Crossing the glowing threshold into the living room triggers the dim Cinema Mode.</p>
+              </div>
+            </div>
+
+            <!-- Panel 6 -->
+            <div class="storyboard-panel">
+              <div class="storyboard-image-wrapper">
+                <img src="assets/storyboard/panel6.png" alt="Lights out" class="storyboard-image" loading="lazy">
+              </div>
+              <div class="storyboard-content">
+                <span class="storyboard-time">10:30 PM</span>
+                <h3 class="storyboard-title">Spatial Coordinate</h3>
+                <p class="storyboard-caption">A smart control panel floats conveniently in the air next to the couch armrest.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- ////////////////////////////////////////////////////////////
+         SECTION F — PROTOTYPE (Proof of Build)
+         //////////////////////////////////////////////////////////// -->
+    <section class="py-80" id="section-prototype" data-ambient="default">
+      <div class="grid mb-48">
+        <div class="col-3-10 text-center fade-up">
+          <p class="label mb-16">Proof of Build</p>
+          <p>
+            I built a working prototype in Unity to test whether 
+            surface detection and contextual placement actually 
+            work on visionOS.
+          </p>
+        </div>
+      </div>
+      <div class="grid fade-up">
+        <div class="col-1-12">
+          <div class="prototype-frame prototype-fullwidth">
+            <iframe 
+              class="autoplay-video"
+              data-autoplay-src="https://www.youtube.com/embed/SGl-RoSR190?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=SGl-RoSR190" 
+              frameborder="0" allowfullscreen loading="lazy"
+              allow="autoplay; encrypted-media"
+              style="width:100%;height:100%;position:absolute;top:0;left:0;">
+            </iframe>
+          </div>
+        </div>
+      </div>
+      <div class="grid fade-up" style="margin-top: var(--s-24);">
+        <div class="col-1-12">
+          <div class="prototype-frame prototype-fullwidth">
+            <iframe 
+              class="autoplay-video"
+              data-autoplay-src="https://www.youtube.com/embed/SmK08ZxMnZU?rel=0&modestbranding=1&autoplay=1&mute=1&loop=1&playlist=SmK08ZxMnZU" 
+              frameborder="0" allowfullscreen loading="lazy"
+              allow="autoplay; encrypted-media"
+              style="width:100%;height:100%;position:absolute;top:0;left:0;">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ////////////////////////////////////////////////////////////
+         SECTION H — FOOTER
+         //////////////////////////////////////////////////////////// -->
+    <footer class="site-footer py-80" id="section-footer">
+      <div class="grid">
+        <div class="col-2-5 fade-up">
+          <h3 class="footer-title mb-16">Loci.</h3>
+          <div class="footer-links mb-24">
+            <a href="mailto:shubhamk@usc.edu" class="footer-link">shubhamk@usc.edu</a>
+            <span class="footer-divider-dot">·</span>
+            <a href="#" class="footer-link" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="../" class="footer-link">Full Portfolio</a>
+          </div>
+          <p class="caption">© 2026</p>
+        </div>
+        <div class="col-7-11 fade-up" data-delay="1">
+          <p class="label mb-16">Deliverables</p>
+          <p class="mb-32" style="color: var(--c-text-primary);">
+            UX Framework · 3D Scene Mockups · Widget State Specification · Spatial Floor Plan · Functional Unity Prototype
+          </p>
+          <p class="label mb-16">Tools</p>
+          <div class="pills-group pills-light">
+            <span class="pill">Figma</span>
+            <span class="pill">Unity</span>
+            <span class="pill">PolySpatial</span>
+            <span class="pill">Veo 3</span>
+            <span class="pill">After Effects</span>
+          </div>
+        </div>
+      </div>
+      <div class="grid mt-48">
+        <div class="col-3-10 text-center">
+          <a href="#hero-section" class="back-to-top" id="back-to-top">↑ Back to top</a>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
+

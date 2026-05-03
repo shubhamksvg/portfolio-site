@@ -31,11 +31,13 @@ const projects = [
     title: "Loci.",
     desc: "Widgets were designed for phone screens. I redesigned them for 3D space.",
     video: `${base}locihero.mp4`,
+    url: `${base}loci/index.html`,
   },
   {
     title: "Monet.",
     desc: "An AI canvas where prompts become brushes and iteration feels tactile.",
     video: `${base}monethero.mp4`,
+    url: `${base}monet/index.html`,
   },
 ];
 
@@ -177,7 +179,7 @@ export default function App() {
         {/* ─── Right Column ─────────────────────────────── */}
         <section className="right-col">
           {projects.map((project) => (
-            <div key={project.title}>
+            <a key={project.title} href={project.url} className="block group">
               <motion.div
                 className="project-thumb"
                 animate={{ scale: isDesign ? 1.015 : 1 }}
@@ -204,11 +206,11 @@ export default function App() {
                   </>
                 )}
               </motion.div>
-              <div className="project-info">
+              <div className="project-info group-hover:opacity-80 transition-opacity">
                 <h2>{project.title}</h2>
                 <p>{project.desc}</p>
               </div>
-            </div>
+            </a>
           ))}
         </section>
       </div>
