@@ -900,65 +900,73 @@ a:hover {
    RESPONSIVE
    ============================================================ */
 
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
 @media (max-width: 960px) {
   .grid {
     gap: var(--s-16);
   }
 
-  .col-2-5, .col-2-7, .col-7-11, .col-7-12, .col-8-12,
-  .col-1-5, .col-1-6, .col-6-12 {
-    grid-column: 1 / -1;
-  }
-
-  .col-2-11, .col-3-10 {
-    grid-column: 1 / -1;
-  }
-
   .concept-flow {
     grid-template-columns: repeat(2, 1fr);
   }
-
+  
   .concept-step::after {
     display: none;
   }
-
-  .problem-text {
-    padding-right: 0;
-  }
-
-  .quote-text-large {
-    font-size: clamp(20px, 5vw, 32px);
-  }
-
-  .hero-title {
-    font-size: clamp(40px, 10vw, 64px);
-  }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  /* Grid Collapse */
+  .grid {
+    padding: 0 var(--s-16);
+  }
+
+  /* Force all columns to full width */
+  [class*="col-"] {
+    grid-column: 1 / -1 !important;
+  }
+
+  /* Structural stacking */
   .concept-flow {
+    grid-template-columns: 1fr;
+    gap: var(--s-32);
+  }
+
+  .export-video-col {
     grid-template-columns: 1fr;
   }
 
+  /* Reduce Padding / Margins */
+  .py-120 { padding-top: var(--s-64); padding-bottom: var(--s-64); }
+  .problem-text { padding-right: 0; }
+  
   .quote-block {
     min-height: auto;
     padding: var(--s-48) 0;
   }
 
+  /* Typography Adjustments */
+  .quote-text-large {
+    font-size: clamp(20px, 6vw, 28px);
+  }
+
+  h1, .hero-title {
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+  }
+
   .anatomy-panel {
     max-width: 100%;
-    margin: var(--s-32);
+    margin: var(--s-24) var(--s-16);
   }
 
   .hero {
     min-height: 100svh;
   }
 
-  .format-badges {
-    flex-direction: column;
-  }
-
-  .footer-links {
+  .format-badges, .footer-links {
     flex-direction: column;
     align-items: flex-start;
   }

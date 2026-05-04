@@ -1833,3 +1833,58 @@ p {
   border-radius: var(--s-24);
   margin-bottom: 0;
 }
+
+/* ============================================================
+   MOBILE RESPONSIVENESS
+   ============================================================ */
+@media (max-width: 768px) {
+  /* Grid Collapse */
+  .grid {
+    padding: 0 var(--s-16);
+  }
+  
+  /* Force all columns to full width */
+  [class*="col-"] {
+    grid-column: 1 / -1 !important;
+  }
+
+  /* Reduce Padding / Margins */
+  .py-160 { padding-top: var(--s-80); padding-bottom: var(--s-80); }
+  .py-120 { padding-top: var(--s-64); padding-bottom: var(--s-64); }
+  .py-80  { padding-top: var(--s-48); padding-bottom: var(--s-48); }
+  .pt-160 { padding-top: var(--s-80); }
+  .pb-160 { padding-bottom: var(--s-80); }
+  
+  .hero-overlay {
+    padding-bottom: var(--s-48);
+  }
+
+  /* Typography Adjustments */
+  h1, .hero-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+  h2 {
+    font-size: var(--f-xl);
+  }
+
+  /* Structural Fixes */
+  .bento-row {
+    grid-template-columns: 1fr;
+    gap: var(--s-16);
+  }
+  
+  .lifecycle-grid {
+    grid-template-columns: 1fr;
+    gap: var(--s-24);
+  }
+  
+  .scene-connector {
+    padding-left: 0;
+    align-items: center;
+  }
+
+  /* Adjust film strip size */
+  .film-strip-frame {
+    flex: 0 0 85vw;
+  }
+}

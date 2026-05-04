@@ -378,3 +378,38 @@ button {
   border-radius: 9999px;
   vertical-align: middle;
 }
+
+/* ── Mobile Layout Fixes ───────────────────────────────── */
+@media (max-width: 768px) {
+  /* Fix fixed heights for titles to prevent text overflow on mobile wrap */
+  .content-card__title--dev,
+  .content-card__title--design {
+    height: auto;
+    min-height: 110px;
+    font-size: 1.25rem; /* Slightly smaller for mobile */
+    margin-bottom: 24px;
+  }
+  .content-card__title--design {
+    font-size: 1.5rem;
+  }
+
+  /* Reduce gap on grid layout for better mobile flow */
+  .grid-layout {
+    gap: 48px;
+  }
+
+  /* Ensure content card doesn't overflow */
+  .content-card {
+    padding: 24px;
+  }
+
+  /* Reduce margin on toggle */
+  .toggle-wrap {
+    margin-bottom: 64px;
+  }
+
+  /* Adjust nav island */
+  .nav-island__inner {
+    padding: 10px 20px;
+  }
+}
